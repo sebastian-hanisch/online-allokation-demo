@@ -48,7 +48,7 @@ def test_ordnung_uses_the_smallest_knappheit_and_names_the_extreme_cells():
     kind, text = ev.verdict_ordnung(_order_rows())
     assert kind == "info"
     assert "Bei Knappheit 0.1: Preislernen erreicht 0.845 des Optimums bei zufälliger Reihenfolge und **0.000** bei absteigender" in text
-    assert "die exponentielle Preisfunktion in der schlechtesten Reihenfolge 0.313, FCFS 0.153." in text and "in jeder Reihenfolge mindestens 0.980." in text
+    assert "die exponentielle Preisfunktion in der aufsteigenden Reihenfolge (der schlechtesten der drei getesteten) 0.313, FCFS 0.153." in text and "in jeder Reihenfolge mindestens 0.980." in text
 
 
 def test_wachstum_ressourcen_schritt_and_garantie_name_first_and_last_row():
@@ -64,7 +64,7 @@ def test_wachstum_ressourcen_schritt_and_garantie_name_first_and_last_row():
     assert "Bei zufälliger Reihenfolge ist der Faktor 3 am besten (0.954), bei aufsteigender der Faktor 10 (0.627)" in text and "der kleinste Faktor 0.1 erreicht 0.659 und 0.272." in text
     rows = [{"Knappheit": 0.1, "Garantie": 0.303, "exponentiell": 0.32, "FCFS": 0.153, "Preislernen": 0.201}]
     _, text = ev.verdict_garantie(rows)
-    assert "Bei Knappheit 0.1 erreicht die exponentielle Preisfunktion in der schlechtesten Reihenfolge **0.320**" in text
+    assert "Bei Knappheit 0.1 erreicht die exponentielle Preisfunktion in der aufsteigenden Reihenfolge (der schlechtesten der drei getesteten) **0.320**" in text
     assert "die Garantie für eine Strecke ist 0.303. FCFS erreicht dort 0.153, Preislernen 0.201." in text
 
 

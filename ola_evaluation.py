@@ -161,7 +161,7 @@ def verdict_ordnung(rows: list[dict]) -> tuple[str, str]:
     desc = next(r for r in rows if r["Knappheit"] == z["Knappheit"] and r["Reihenfolge"] == "absteigend")
     orakel_min = min(r["Orakel-Preise"] for r in rows)
     return "info", (f"Bei Knappheit {z['Knappheit']:g}: Preislernen erreicht {z['Preislernen']:.3f} des Optimums bei zufälliger Reihenfolge und **{desc['Preislernen']:.3f}** bei absteigender; "
-                    f"die exponentielle Preisfunktion in der schlechtesten Reihenfolge {asc['exponentiell']:.3f}, FCFS {asc['FCFS']:.3f}. Die Orakel-Preise erreichen in jeder Reihenfolge mindestens {orakel_min:.3f}.")
+                    f"die exponentielle Preisfunktion in der aufsteigenden Reihenfolge (der schlechtesten der drei getesteten) {asc['exponentiell']:.3f}, FCFS {asc['FCFS']:.3f}. Die Orakel-Preise erreichen in jeder Reihenfolge mindestens {orakel_min:.3f}.")
 
 
 def verdict_wachstum(rows: list[dict]) -> tuple[str, str]:
@@ -189,5 +189,5 @@ def verdict_schritt(rows: list[dict]) -> tuple[str, str]:
 def verdict_garantie(rows: list[dict]) -> tuple[str, str]:
     """Experiment 5: eine Strecke, schlechteste Reihenfolge, Garantie."""
     first = rows[0]
-    return "info", (f"Bei Knappheit {first['Knappheit']:g} erreicht die exponentielle Preisfunktion in der schlechtesten Reihenfolge **{first['exponentiell']:.3f}** des Optimums; "
+    return "info", (f"Bei Knappheit {first['Knappheit']:g} erreicht die exponentielle Preisfunktion in der aufsteigenden Reihenfolge (der schlechtesten der drei getesteten) **{first['exponentiell']:.3f}** des Optimums; "
                     f"die Garantie für eine Strecke ist {first['Garantie']:.3f}. FCFS erreicht dort {first['FCFS']:.3f}, Preislernen {first['Preislernen']:.3f}.")

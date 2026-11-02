@@ -191,7 +191,7 @@ st.markdown("---")
 
 st.subheader("🔬 Experiment 5: Eine Strecke gegen die Garantie")
 rows_ga = _guarantee()
-st.caption(f"Eine Teilstrecke (der Online-Rucksack), schlechteste Reihenfolge (niedrige Werte zuerst). Garantie der verteilungsfreien Preisfunktion für eine Strecke: 1/(ln(U/L) + 1) mit U/L = {C.HI / C.LO:g}.")
+st.caption(f"Eine Teilstrecke (der Online-Rucksack), aufsteigende Reihenfolge (niedrige Werte zuerst, die schlechteste der drei getesteten). Garantie der verteilungsfreien Preisfunktion für eine Strecke: 1/(ln(U/L) + 1) mit U/L = {C.HI / C.LO:g}.")
 st.plotly_chart(build_guarantee(rows_ga), width="stretch", key="guarantee_chart")
 kind, text = verdict_garantie(rows_ga)
 getattr(st, kind)(text)
@@ -216,7 +216,7 @@ st.markdown(
 with st.expander("⚠️ Annahmen, Grenzen und bekannte Probleme"):
     st.markdown(
         f"""
-**Annahmen.** Der Wert je Einheit ist gleichverteilt zwischen {C.LO:g} und {C.HI:g} (U/L = {C.HI / C.LO:g}), {C.TWO_LEG_SHARE * 100:.0f} % der Buchungen nutzen zwei Strecken; der Wert einer Buchung ist der Wert je Einheit mal Zahl der Strecken. Die Kapazität je Strecke ist der Anteil „Knappheit“ der Nachfrage dieser Strecke (abgerundet, mindestens 1). Das **LP-Optimum** ist eine obere Schranke des ganzzahligen Optimums; auf kleinen Instanzen fiel beides zusammen, im Allgemeinen nicht. Die Anteile sind deshalb **untere Schranken** der wahren Anteile.
+**Annahmen.** Der Wert je Einheit ist gleichverteilt zwischen {C.LO:g} und {C.HI:g} (U/L = {C.HI / C.LO:g}), {C.TWO_LEG_SHARE * 100:.0f} % der Buchungen nutzen zwei Strecken; der Wert einer Buchung ist der Wert je Einheit mal Zahl der Strecken. Die Kapazität je Strecke ist der Anteil „Knappheit“ der Nachfrage dieser Strecke (abgerundet, mindestens 1). Das **LP-Optimum** ist eine obere Schranke des ganzzahligen Optimums; auf kleinen Instanzen fiel beides zusammen oder lag weniger als 0,002 % auseinander, im Allgemeinen ist ein Abstand möglich. Die Anteile sind deshalb **untere Schranken** der wahren Anteile.
 
 **Grenzen.** Die Demo ist nur an erfundenen Buchungen geprüft. Die Regeln sind **vereinfachte Fassungen in der Art** der genannten Arbeiten, ohne deren bewiesene Konstanten. Die Garantie 1/(ln(U/L) + 1) gilt in der Quelle für **eine** Ressource; für mehrere Strecken ist kein geprüfter Wert bekannt, und die App behauptet keinen. Preislernen lehnt die ersten {C.LEARN_START * 100:.0f} % der Buchungen ab, solange es lernt. Die Experimente laufen über {len(C.SWEEP_SEEDS)} feste Seeds und sind Mittelwerte.
 

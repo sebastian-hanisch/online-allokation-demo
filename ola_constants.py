@@ -24,7 +24,7 @@ ORDNUNGEN = ("zufällig", "aufsteigend (niedrige zuerst)", "absteigend")
 DEFAULT_ORDNUNG = "zufällig"
 ORDNUNG_HILFE = {
     "zufällig": "Die Buchungen kommen in zufälliger Reihenfolge, der Anfang ist typisch für das Ganze.",
-    "aufsteigend (niedrige zuerst)": "Die Buchungen mit dem niedrigsten Wert je Einheit kommen zuerst: die schlechteste Reihenfolge für jede Regel, die Platz verschenkt.",
+    "aufsteigend (niedrige zuerst)": "Die Buchungen mit dem niedrigsten Wert je Einheit kommen zuerst: für FCFS, Dual-Gradient und die exponentielle Preisfunktion die schlechteste der drei Reihenfolgen (für Preislernen ist es die absteigende).",
     "absteigend": "Die Buchungen mit dem höchsten Wert je Einheit kommen zuerst: der Anfang ist völlig untypisch für das Ganze.",
 }
 TRACE_LEN = 20
@@ -52,9 +52,9 @@ PRESETS = {
 }
 PRESET_HELP = {
     "Netz mit vier Strecken": "Vier Teilstrecken, die Hälfte der Buchungen nutzt zwei davon, 30 % der Nachfrage als Platz, zufällige Reihenfolge: Preislernen liegt bei etwa neun Zehnteln des Optimums.",
-    "Gegner: niedrige Werte zuerst": "Die schlechteste Reihenfolge bei sehr knappem Platz: die verteilungsfreie Preisfunktion bleibt bei etwa einem Drittel des Optimums (die Garantie für eine Strecke wäre 30 %), FCFS verliert fast alles.",
-    "Sortiert absteigend: Lernen scheitert": "Die wertvollsten Buchungen kommen zuerst: Preislernen lernt zu hohe Preise und lehnt danach alles ab.",
+    "Gegner: niedrige Werte zuerst": "Die schlechteste der drei getesteten Reihenfolgen bei sehr knappem Platz: die verteilungsfreie Preisfunktion bleibt bei etwa einem Drittel des Optimums (die Garantie für eine Strecke wäre 30 %), FCFS verliert fast alles.",
+    "Sortiert absteigend: Lernen scheitert": "Die wertvollsten Buchungen kommen zuerst: Preislernen lernt zu hohe Preise und lehnt danach in diesem Netz mit vier Strecken alles ab.",
     "Eine Strecke (Online-Rucksack)": "Nur eine Strecke: der Online-Rucksack. Die verteilungsfreie Preisfunktion gegen ihre Garantie für eine Ressource.",
-    "Viele Strecken": "Acht Teilstrecken: Mehr Ressourcen machen das Lernen der Preise schwerer.",
+    "Viele Strecken": "Acht Teilstrecken: Dual-Gradient liegt im Mittel 12 Punkte tiefer als mit einer Strecke (Experiment 3).",
     "Reichlich Platz": "Der Platz reicht für die ganze Nachfrage: FCFS nimmt alles an und ist optimal; die Preisregeln lehnen ohne Not einzelne Buchungen ab.",
 }
