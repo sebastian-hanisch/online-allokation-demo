@@ -1,7 +1,6 @@
 # Online-Allokation – Buchungen mit Preisen statt mit Glück annehmen – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-online-allokation-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-online-allokation-demo.streamlit.app/)**
 
 Viertes Stück der Reihe **Online-Algorithmen** („Entscheiden ohne Kenntnis der Zukunft“) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“, unabhängiger Ast neben [paging-demo](https://github.com/sebastian-hanisch/paging-demo) und [online-packen-demo](https://github.com/sebastian-hanisch/online-packen-demo) unter der Wurzel [ski-rental-demo](https://github.com/sebastian-hanisch/ski-rental-demo).
 Anders als die Fall-Demos (ein Anwendungsfall, mehrere Verfahren im Vergleich) zeigt diese Demo **ein** Konzept, **Preise für knappen Platz**, an einem wachsenden Beispiel: von einer Strecke (dem Online-Rucksack) über ein Netz mit mehreren Teilstrecken bis zu der Frage, was die Reihenfolge der Buchungen kostet.
@@ -116,4 +115,4 @@ Gebaut mit Streamlit, Plotly, NumPy, SciPy und pandas.
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Online-Algorithmen: Entscheiden ohne Zukunft](https://sebastianhanisch.net/konzepte-online-algorithmen.html).
